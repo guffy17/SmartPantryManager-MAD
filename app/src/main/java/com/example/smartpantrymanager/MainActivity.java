@@ -20,5 +20,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.fabAdd).setOnClickListener(v -> startActivity(new Intent(this, AddItemActivity.class)));
+        findViewById(R.id.btnGoToRecipes).setOnClickListener(v -> startActivity(new android.content.Intent(this, SuggestedRecipesActivity.class)));
     }
 }
