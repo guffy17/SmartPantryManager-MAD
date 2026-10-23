@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 
 @Database(
         entities = {PantryItem.class, Recipe.class, RecipeIngredient.class},
-        version = 1,
+        version =2,
         exportSchema = false
 )
 public abstract class AppDatabase extends RoomDatabase {
@@ -30,7 +30,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             context.getApplicationContext(),
                             AppDatabase.class,
                             "smart_pantry_db"
-                    ).addCallback(seedCallback).build();
+                    ).addCallback(seedCallback).fallbackToDestructiveMigration().build();
                 }
             }
         }
